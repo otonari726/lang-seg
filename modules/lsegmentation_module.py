@@ -179,7 +179,7 @@ class LSegmentationModule(pl.LightningModule):
             self.trainset,
             batch_size=self.batch_size,
             shuffle=True,
-            num_workers=16,
+            num_workers=0,
             worker_init_fn=lambda x: random.seed(time.time() + x),
         )
 
@@ -188,7 +188,7 @@ class LSegmentationModule(pl.LightningModule):
             self.valset,
             batch_size=self.batch_size,
             shuffle=False,
-            num_workers=16,
+            num_workers=0,
         )
 
     def get_trainset(self, dset, augment=False, **kwargs):

@@ -71,7 +71,32 @@ class LSegModule(LSegmentationModule):
         )
         # print(kwargs)
 
-        labels = self.get_labels('ade20k')
+        labels = [
+            "appliance",
+            "bathroom shelf",
+            "bathroom sink",
+            "bathtub",
+            "bed",
+            "builtin storage",
+            "ceiling",
+            "ceiling light",
+            "chair",
+            "counter board",
+            "door",
+            "floor",
+            "kitchen",
+            "low table",
+            "others",
+            "sofa",
+            "stairs",
+            "storage furniture",
+            "table",
+            "toilet",
+            "tv board",
+            "wall",
+            "wall socket",
+            "window"
+        ]
 
         self.net = LSegNet(
             labels=labels,
